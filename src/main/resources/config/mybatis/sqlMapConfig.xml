@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- SQL의 결과를 담을 VO 객체들의 별칭을 설정하여 사용의 편의를 도모  -->
+	<typeAliases>
+		<typeAlias alias="login" type="kr.co.hjscheduler.vo.LoginVO" />
+		<typeAlias alias="scheduler" type="kr.co.hjscheduler.vo.ScheduleVO" />
+	</typeAliases>
+	
+</configuration>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="loginDAO">
+
+ <select id="selectMember" parameterType="int" resultType="int">
+
+select user_kakao_no as userKakaoNo from hj_Scheduler_user where user_kakao_no = #{id}
+</select>
+ 
+<insert id="insertMember" parameterType="int" >
+insert into hj_Scheduler_user (user_kakao_no) values (#{id}) 
+</insert>
+</mapper>

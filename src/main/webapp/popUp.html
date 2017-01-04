@@ -1,0 +1,118 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<style>
+
+select{font-size:14px;width:150px;height:40px;}
+#check{font-size:18px;}
+#dd{font-size:18px; margin-left:10px;}
+.modal-header{font-size:22px;}
+</style>
+<script src="/hjscheduler/js/jquery-3.1.0.js"></script>
+<div class="modal fade" id="layerpop" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- header -->
+      <div class="modal-header">
+     
+        <button type="button" class="close" data-dismiss="modal">x</button>
+        <!-- header title -->
+        <h4 class="modal-title"></h4>
+      </div>
+      <!-- body -->
+      <div class="modal-body">
+		<form method="POST">
+		<input type="text" id="eventName" class="form-control" 	placeholder="이벤트 입력 "><br>
+		<select id="select1">
+				<option>오전 12:00</option>
+				<option>오전 01:00</option>
+				<option>오전 02:00</option>
+				<option>오전 03:00</option>
+				<option>오전 04:00</option>
+				<option>오전 05:00</option>
+				<option>오전 06:00</option>
+				<option>오전 07:00</option>
+				<option>오전 08:00</option>
+				<option>오전 09:00</option>
+				<option>오전 10:00</option>
+				<option>오전 11:00</option>
+				<option>오후 12:00</option>
+				<option>오후 01:00</option>
+				<option>오후 02:00</option>
+				<option>오후 03:00</option>
+				<option>오후 04:00</option>
+				<option>오후 05:00</option>
+				<option>오후 06:00</option>
+				<option>오후 07:00</option>
+				<option>오후 08:00</option>
+				<option>오후 09:00</option>
+				<option>오후 10:00</option>
+				<option>오후 11:00</option>
+			</select>
+			<select id="select2">
+				<option>오전 12:00</option>
+				<option>오전 01:00</option>
+				<option>오전 02:00</option>
+				<option>오전 03:00</option>
+				<option>오전 04:00</option>
+				<option>오전 05:00</option>
+				<option>오전 06:00</option>
+				<option>오전 07:00</option>
+				<option>오전 08:00</option>
+				<option>오전 09:00</option>
+				<option>오전 10:00</option>
+				<option>오후 11:00</option>
+				<option>오후 12:00</option>
+				<option>오후 01:00</option>
+				<option>오후 02:00</option>
+				<option>오후 03:00</option>
+				<option>오후 04:00</option>
+				<option>오후 05:00</option>
+				<option>오후 06:00</option>
+				<option>오후 07:00</option>
+				<option>오후 08:00</option>
+				<option>오후 09:00</option>
+				<option>오후 10:00</option>
+				<option>오후 11:00</option>
+			</select>
+			
+	<span id="dd">종일<input id="check" type="checkbox"></span>
+      </form>
+
+      </div>
+      <!-- Footer -->
+      <div class="modal-footer">
+    	<button type="button" id="submit" class="btn btn-default">등록</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+
+	
+$("#submit").click(function (){
+	var sel1=$("#select1 option:selected").text();
+	var sel2=$("#select2 option:selected").text();
+	var eventName=("#eventName")
+
+	if(eventName===null){
+		alert("dddd");
+	}
+	if(sel1==sel2){
+		alert("같은시간을 입력 할 수 없습니다");
+		return;
+	}
+});
+
+$("#check").click(function(){
+	if($(this).is(":checked")==true){
+		$("#select1,#select2").attr('disabled', 'true');
+		$("#select1,#select2").css('background', '#E7E5E5');
+	}else{
+		$("#select1,#select2").removeAttr("disabled");
+		$("#select1,#select2").css('background', 'white');
+	}	
+});
+
+
+</script>

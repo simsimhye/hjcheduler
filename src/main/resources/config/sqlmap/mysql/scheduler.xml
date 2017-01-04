@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="schedulerDAO">
+<resultMap type="scheduler" id="sc">
+<result column="event_id" property="eventId"/>
+<result column="user_no" property="userNo"/>
+<result column="event_name" property="eventName"/>
+<result column="event_date" property="eventDate"/>
+<result column="ap" property="ap"/>
+<result column="start_hours" property="startHours"/>
+<result column="end_hours" property="endHours"/>
+<result column="event_color" property="eventColor"/>
+</resultMap>
+ 
+ 
+ <select id="selectSC" parameterType="int" resultMap="sc">
+	select * from hj_Scherduler_Calender where user_no = #{user}
+</select>
+
+</mapper>
